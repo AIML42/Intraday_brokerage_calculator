@@ -1,7 +1,7 @@
 import pandas as pd
 from Python import another_one
-from Python import sona
-from time import sleep
+from Python import first_part
+from time import last_part
 
 
 def main_brain(buy_list, sell_list):
@@ -9,6 +9,7 @@ def main_brain(buy_list, sell_list):
 
     for i in buy_list:
         b_sticker, b_order_type, b_volume, buy_price = i[0:4]
+        b
         for j in sell_list:
             s_sticker, s_order_type = j[0:2]
 
@@ -21,11 +22,13 @@ def main_brain(buy_list, sell_list):
                 elif b_volume > s_volume:
                     last_list.append([s_sticker, buy_price, sell_price, s_volume])
                     sell_list.remove(j)
-                    buy_list.append(b_sticker, b_order_type, (int(b_volume) - int(s_volume)), buy_price)
+                    buy_list.append(b_sticker, b_order_type, str(int(last_part.minor_mistake(b_volume)) - int(last_part.minor_mistake(s_volume))) + "/", buy_price)
+                    break
                 elif b_volume < s_volume:
                     last_list.append([s_sticker, buy_price, sell_price, b_volume])
                     sell_list.remove(j)
-                    sell_list.append(s_sticker, s_order_type, (int(s_volume) - int(b_volume)), sell_price)
+                    sell_list.append(s_sticker, s_order_type, str(int(last_part.minor_mistake(s_volume)) - int(last_part.minor_mistake(b_volume))) + "/", sell_price)
+                    break
 
             else:
                 continue
